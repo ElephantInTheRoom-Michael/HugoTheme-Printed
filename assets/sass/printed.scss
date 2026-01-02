@@ -1,0 +1,44 @@
+$page-margin: 0.5in;
+
+@media print {
+  @page {
+    size: letter;
+    margin: $page-margin 0;
+  }
+}
+
+article {
+  background-color: var(--background-color);
+}
+
+@mixin edge-to-edge-color {
+  position: relative;
+  border: none;
+  color: white;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: -$page-margin;
+    right: -$page-margin;
+    background-color: var(--background-color);
+    content: "";
+  }
+}
+
+article.edge-to-edge-color {
+  @include edge-to-edge-color;
+}
+
+article.filled-top-of-page {
+  break-before: page;
+  margin-top: 0;
+
+  @include edge-to-edge-color;
+
+  &::before {
+    top: -$page-margin;
+  }
+}
