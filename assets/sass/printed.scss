@@ -7,6 +7,11 @@
   }
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 @mixin edge-to-edge-color {
   position: relative;
   border: none;
@@ -31,7 +36,8 @@ article.edge-to-edge-color {
 
 article.filled-top-of-page {
   break-before: page;
-  margin-top: 0;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 
   @include edge-to-edge-color;
 
