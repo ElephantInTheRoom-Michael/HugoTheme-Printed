@@ -1,9 +1,9 @@
-$page-margin: 0.5in;
+@use "page-margin";
 
 @media print {
   @page {
     size: letter;
-    margin: $page-margin 0;
+    margin: page-margin.$page-margin 0;
   }
 }
 
@@ -18,8 +18,8 @@ $page-margin: 0.5in;
     z-index: -1;
     top: 0;
     bottom: 0;
-    left: -$page-margin;
-    right: -$page-margin;
+    left: -(page-margin.$page-margin);
+    right: -(page-margin.$page-margin);
     background-color: var(--edge-to-edge-background-color);
     content: "";
   }
@@ -36,7 +36,7 @@ article.filled-top-of-page {
   @include edge-to-edge-color;
 
   &::before {
-    top: -$page-margin;
+    top: -(page-margin.$page-margin);
   }
 }
 
