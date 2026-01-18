@@ -3,7 +3,7 @@
 @media print {
   @page {
     size: letter;
-    margin: page-margin.$page-margin 0;
+    margin: page-margin.$page-margin;
   }
 }
 
